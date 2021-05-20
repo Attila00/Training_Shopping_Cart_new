@@ -3,7 +3,7 @@ $header-margin-tb: 0.4rem;
 .header{
     width: 100%;
     border-bottom: 1px solid;
-    box-shadow: 1px 6px 6px -6px black;
+    box-shadow: $container-shadow;
     align-content: center;
     margin-top: 0px;
 
