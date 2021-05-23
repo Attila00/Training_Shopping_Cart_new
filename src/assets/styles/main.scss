@@ -1,7 +1,8 @@
 $text-color: #0000;
 $primary-button-background: #e22b62;
 $button-text-color: #ffff;
-$container-shadow :0px 30px 20px -30px #a19f9f;
+$home-card-container-shadow :0px 30px 20px -33px #a19f9f;
+$header-container-shadow :0px 30px 20px -36px #a19f9f;
 
 $product-card-width-tablet: 15vh;
 $width-content-container:74rem;
@@ -19,6 +20,7 @@ $breakpoint-tablet: 770px;
 $breakpoint-desktop: 1024px;
 
 
+$form-field-margin-top:1.4rem;
 $header:red;
 body {
 font-size:$font-medium ;
@@ -49,6 +51,14 @@ a{
     cursor: pointer;
     color: black;
 }
-.button{
-    border-radius: 3px;
+button{
+    border-radius: 1px;
+    cursor: pointer;
+}
+.desc-text{
+    font-size: $font-small;
+    font-weight: 500;
+}
+.selected{
+    font-weight: bold;
 }

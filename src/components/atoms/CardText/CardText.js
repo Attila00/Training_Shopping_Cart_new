@@ -5,7 +5,7 @@ const CardText = ({content, reqClass, buttonclickhandler}) =>{
     return (
     <section className={`card-text-main ${reqClass}`}>
         <h3>{content.title}</h3>
-        <p>{content.description}</p>
+        <p className="desc-text">{content.description}</p>
         <Button type="primary" 
         buttonclickhandler={buttonclickhandler} 
         id={content.id} 

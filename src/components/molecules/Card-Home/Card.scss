@@ -2,7 +2,7 @@
 .main__card{
         &_subcontainer{
             max-width: $width-content-container;
-            box-shadow: $container-shadow;
+            box-shadow: $home-card-container-shadow;
             display: flex;
             justify-content: space-between;
             margin: 0 auto;
