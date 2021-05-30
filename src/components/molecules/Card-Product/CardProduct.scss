@@ -1,0 +1,98 @@
+@import "../../../assets/styles/main.scss";
+$padding-card-common: 0.5rem;
+$description-card-desktop-height: 5rem;
+.product{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        // grid-template-rows: 2rem 6rem 2rem;
+        padding: 0.5rem;
+        // margin-bottom: 1rem;
+        // font-size: 0.9rem;
+        border-bottom: 1px solid black;
+        justify-items: center;
+        &_title{
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+            height: 3.5rem;
+            font-size: $font-medium;
+            @media screen and(max-width:$breakpoint-mobile){
+                height: auto;
+            }
+        }
+        &_card-image{
+            grid-column: 1 / 3;
+            grid-row: 2 ;
+            object-fit: contain ;
+            @media screen and(max-width:$breakpoint-tablet){
+                justify-self: start;
+                grid-column: 1;
+                grid-row: 2 ;
+            }
+            @media screen and(max-width:$breakpoint-mobile){
+                justify-self: start;
+                grid-column: 1;
+                grid-row: 2 / 4;
+            }
+        }
+        &_description{
+            overflow: hidden;
+            background-color: $category-background-color;
+            padding: $padding-card-common;
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            font-size: $font-small;
+            @media screen and(min-width:$breakpoint-tablet){
+                height: $description-card-desktop-height;
+                grid-column: 1 / 3;
+                grid-row: 3 ;
+            }
+            @media screen and(max-width:$breakpoint-tablet){
+                height: 5rem;
+            }
+            @media screen and(max-width:$breakpoint-mobile){
+                height: 4rem;
+            }
+        }
+        &_pricing_buybutton{
+            display: grid;
+            justify-self: stretch;
+            @media screen and(min-width:$breakpoint-tablet){
+                display: none;
+            }
+            @media screen and(max-width:$breakpoint-tablet){
+                grid-column: 1 / 3;
+                grid-row: 3 ;
+            }
+            @media screen and(max-width:$breakpoint-mobile){
+                grid-column: 2 / 3;
+                grid-row: 3 / 4;
+            }
+           
+        }
+        &_desktop_pricing{
+                grid-column: 1 / 3;
+                grid-row: 4 ;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;                
+                padding: 1rem 1rem 0.8rem 1rem;
+            @media screen and(max-width:$breakpoint-tablet){
+                display: none;
+            }
+            &_buybutton{
+                width: fit-content;
+            }
+        }
+
+}
+.imagefitproduct{
+    max-height: 12rem;
+    object-fit: contain;
+    @media screen and(max-width:$breakpoint-tablet){
+        max-height: 120px;
+    }
+    @media screen and(max-width:$breakpoint-mobile){
+        max-height: 120px;
+    }
+}
