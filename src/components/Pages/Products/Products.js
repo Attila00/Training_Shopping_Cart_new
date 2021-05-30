@@ -56,7 +56,7 @@ const Products = (props) =>{
             })}
         </aside>
         <section className="products_categories_dropdown">
-            <Dropdown headerTitle="dropdown.title" 
+            <Dropdown headerTitle="products.dropdown.title" 
             list={categories} 
             displayProp="name" 
             selectedCategory={selectedCategory} 
