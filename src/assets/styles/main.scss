@@ -1,5 +1,5 @@
 $text-color: #0000;
-$primary-button-background: #e22b62;
+$primary-button-background: #d0295b;
 $button-text-color: #ffff;
 $home-card-container-shadow :0px 30px 20px -33px #a19f9f;
 $header-container-shadow :0px 30px 20px -36px #a19f9f;
@@ -8,6 +8,7 @@ $product-card-width-tablet: 15vh;
 $width-content-container:74rem;
 // $category-background-color: rgb(238, 237, 237);
 $category-background-color: #ededed;
+$background-primary :  hsl(0, 0%, 100%);
 
 $font-vsmall: 0.7rem;
 $font-small: 0.8rem;
@@ -19,14 +20,16 @@ $breakpoint-mobile: 480px;
 $breakpoint-tablet: 770px;
 $breakpoint-desktop: 1024px;
 
-
+$gen-pad-margin:0.5rem;
+$zero-margin-auto: 0 auto;
 $form-field-margin-top:1.4rem;
 $header:red;
 body {
 font-size:$font-medium ;
 margin: 0;
-background-color: hsl(0, 0%, 100%);
+background-color: $background-primary;
 font: 100%  "-apple-system",system-ui,"BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+scroll-behavior: smooth;
 ::-webkit-scrollbar{
     width: 0.5rem;
     &-track{
@@ -61,4 +64,8 @@ button{
 }
 .selected{
     font-weight: bold;
+}
+.margin-tb-zero{
+    margin-top: 0;
+    margin-bottom: 0;
 }
