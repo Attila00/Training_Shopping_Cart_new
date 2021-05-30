@@ -1,0 +1,32 @@
+@import "../../../assets/styles/main.scss";
+.main__card{
+        &_subcontainer{
+            max-width: $width-content-container;
+            box-shadow: $home-card-container-shadow;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 10px;
+            min-height: 10vh;
+            &__text{
+                flex-grow: 1;
+            }
+            
+        }
+}
+.imagefithome{
+    max-height: 10rem;
+    max-width: 15rem;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    @media screen and(max-width:$breakpoint-tablet){
+        max-width: 12rem;
+    }
+    @media screen and(max-width:$breakpoint-mobile){
+        max-width: 10rem;
+        aspect-ratio: 1;
+    }
+}
+.card-text-section{
+    flex-grow: 1;
+}
