@@ -3,11 +3,16 @@ import Icon from '../../atoms/Icon/Icon';
 import './Header.scss';
 import {Link} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
+import { useHistory } from 'react-router-dom';
 import { Cart } from '../../Pages/Cart/Cart';
 import { CartHeader } from '../../molecules/HeaderCard/CartHeader';
 export default function Header(){
     // Used for text translation
     const {t} = useTranslation();
+    let history = useHistory();
+    React.useEffect(() => {
+        history.push('/');
+    },[]);
     //Function to update selected as per clicked element
     const updateActiveStatus = (e) =>{
         document.querySelector('.selected') && 
