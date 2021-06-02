@@ -1,8 +1,7 @@
 @import "../../../assets/styles/main.scss";
 $header-margin-tb: 0.4rem;
 .header{
-    width: 100%;
-    border-bottom: 1px solid;
+    width: 100%;    
     box-shadow: $header-container-shadow;
     align-content: center;
     margin-top: 0px;
@@ -17,18 +16,16 @@ $header-margin-tb: 0.4rem;
         }
     }
     .header__nav-home-item{
-        flex: 1;
-        align-self: flex-end;
-        padding-left: 5rem;
-        padding-bottom: 1rem;
+        display: none;
+        @media screen and (min-width:$breakpoint-mobile){
+            flex: 1;
+            align-self: flex-end;
+            padding-left: 5rem;
+            padding-bottom: 1rem;
+            display: unset;
+        }
         a{
             padding-left: 1rem;
-        }
-        @media screen and (max-width:$breakpoint-tablet){
-            // display: none;
-        }
-        @media screen and (max-width:$breakpoint-mobile){
-            display: none;
         }
     }
     .header__nav-login-item{
@@ -61,7 +58,7 @@ $header-margin-tb: 0.4rem;
 .mainlogofit{
     max-height: 5rem;
     max-width: 10rem;
-    padding: 0.4rem;    
+    padding: 0.4rem 0.4rem 0 0.4rem;    
     object-fit: contain;
     @media screen and (max-width:$breakpoint-tablet){
         max-height: 4rem;

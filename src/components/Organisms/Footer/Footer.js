@@ -6,10 +6,10 @@ import {useTranslation} from 'react-i18next';
 const Footer =()=>{
     const {t, i18n} = useTranslation();
 return (
-    <footer className="footer-main">
+    <footer tabIndex={0} className="footer-main">
         <section className="footer-main_subcontainer">
-            <p>{t('footer.message')}</p>
-            <Icon source="../../../assets/images/hinditoenglish.svg" reqclass={`imagefitlogin clickable`} onClickHandler={() => i18n.changeLanguage( i18n.language == 'en' ? 'hin' : 'en')}/>
+            <p tabIndex={0}>{t('footer.message')}</p>
+            <Icon tabIndex={0} source="../../../assets/images/hinditoenglish.svg" alt={`Click to translate language between Hindi and English`} reqclass={`imagefitlogin clickable`} onClickHandler={() => i18n.changeLanguage( i18n.language == 'en' ? 'hin' : 'en')}/>
         </section>
     </footer>
 )

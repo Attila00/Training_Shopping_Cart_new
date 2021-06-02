@@ -1,31 +1,34 @@
-import React from 'react';
+import React,{useState, useEffect, useContext} from 'react';
 import './Products.scss';
 import CardProduct from '../../molecules/Card-Product/CardProduct';
 import Dropdown from '../../molecules/Productdropdown/Dropdown';
-import Button from '../../atoms/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { updateTitle } from '../../../utils/utils';
 import { scrollTop } from '../../../utils/scrollutils';
 import Scrolltop from '../../molecules/ScrollTop/Scrolltop';
 import { GlobalContext } from '../../../Context/globalContext';
+import { useLocation } from 'react-router';
 const Products = (props) =>{
-    const [totalProductsList] = React.useState(require('../../../../server/products/index.get.json'));
-    const [displayProductList, setDisplayProductList] = React.useState(totalProductsList);
-    const [selectedCategory, setSelectedCategory] = React.useState("");
-    const { selectedProducts } = React.useContext(GlobalContext);
+    const { globalState } = useContext(GlobalContext);
+    const { categories, selectedProducts, totalProductsList } = globalState;
+    const [displayProductList, setDisplayProductList] = useState(totalProductsList);
+    const [selectedCategory, setSelectedCategory] = useState("");
+    let location  = useLocation();
     const {t} = useTranslation();
-    React.useEffect(()=>{
-    let filterval = props.location?.selected?.id ? props.location.selected.id : "All";
-    handleCategoryFilter(filterval);
-    },[props]);
+
+    useEffect(()=>{
+        let filterval = props.location?.selected?.id ? props.location.selected.id : "All";
+        handleCategoryFilter(filterval);
+    },[location]);
+
     updateTitle(t('headernav.2'));
-    let categories = require('../../../../server/categories/index.get.json');
-    categories.sort((a, b) => a["order"] - b["order"]);
+
     //For checking items added to card
     selectedProducts.forEach((selectedprod, indexselected) => totalProductsList.forEach(product =>{
         if(indexselected == 0)product.addedtocart = false;
         if(selectedprod.id == product.id)product.addedtocart = true; 
     }));
+
     const handleCategoryFilter = (selected) =>{
         let temp = [];
         let active = "";
@@ -57,11 +60,11 @@ const Products = (props) =>{
         </aside>
         <section className="products_categories_dropdown">
             <Dropdown headerTitle="products.dropdown.title" 
-            list={categories} 
-            displayProp="name" 
-            selectedCategory={selectedCategory} 
-            itemClickHandler={updateProductsRoute} 
-            selected/>
+                list={categories} 
+                displayProp="name" 
+                selectedCategory={selectedCategory} 
+                itemClickHandler={updateProductsRoute} 
+                selected/>
         </section>
         <section id="products_list" className="products_list" tabIndex="0">
             {displayProductList.length > 0 && displayProductList.map(product =>{
