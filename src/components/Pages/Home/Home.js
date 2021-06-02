@@ -1,9 +1,10 @@
 import React from 'react';
 import Card from "../../molecules/Card-Home/Card";
+import { updateTitle } from '../../../utils/utils';
 import {useTranslation} from 'react-i18next';
 const Home =(props)=>{
     const {t} = useTranslation();
-    document.title = document.title.split("-")[0] + ` - ${t('headernav.1')}`;
+    updateTitle(t('headernav.1'));
     let categories = require('../../../../server/categories/index.get.json');
     categories.sort((a, b) => a["order"] - b["order"]);
     return (

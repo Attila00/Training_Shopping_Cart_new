@@ -4,5 +4,40 @@
         "2":"Products",
         "3":"SignIn",
         "4":"Register"
+    },
+    "products":{
+        "button":"Buy Now",
+        "mrp" :"MRP",
+        "dropdown":{
+            "title":"Select Category"
+        }
+    },
+    "login":{
+        "title":"Login",
+        "desc":"Get access to your Orders, Wishlists and Recommendations"
+    },
+    "register":{
+        "title":"Signup",
+        "desc":"We do not share ur personal details with anyone",
+        "inputs":{
+            "1":"First Name",
+            "2":"Last Name",
+            "3":"Email",
+            "4":"Password",
+            "5":"Confirm Password"
+        }
+    },
+    "cart":{
+        "mycart":"My Cart",
+        "cheapermsg":"You won't find it cheaper anywhere",
+        "startshop":"Start Shopping",
+        "promomessage":"Promo code can be applied on payment page",
+        "proceed":"Proceed to checkout",
+        "noitems":"No items in your cart",
+        "emptycartmessage":"Your facourite item's are just a click away",
+        "startshopping":"Start Shopping"
+    },
+    "footer":{
+        "message":"Copyright 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd"
     }
 }

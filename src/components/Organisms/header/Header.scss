@@ -3,7 +3,7 @@ $header-margin-tb: 0.4rem;
 .header{
     width: 100%;
     border-bottom: 1px solid;
-    box-shadow: $container-shadow;
+    box-shadow: $header-container-shadow;
     align-content: center;
     margin-top: 0px;
 
@@ -11,15 +11,16 @@ $header-margin-tb: 0.4rem;
         display: flex;
         max-width: $width-content-container;
         justify-content: space-between;
-        margin: 0 auto;
-        margin-bottom: $header-margin-tb;
-        margin-top: $header-margin-tb;
+        margin: $zero-margin-auto;
+        @media screen and (min-width:$breakpoint-tablet){
+            margin-top: $header-margin-tb;
+        }
     }
     .header__nav-home-item{
         flex: 1;
         align-self: flex-end;
         padding-left: 5rem;
-
+        padding-bottom: 1rem;
         a{
             padding-left: 1rem;
         }
@@ -31,7 +32,7 @@ $header-margin-tb: 0.4rem;
         }
     }
     .header__nav-login-item{
-        align-self: flex-start;
+        align-self: center;
         padding-left: 3rem;
         font-size: 0.8rem;
         display: flex;
@@ -47,21 +48,34 @@ $header-margin-tb: 0.4rem;
         }
         &_cart{            
             display: flex;
-            align-items: flex-end;
+            align-items: center;
+            height: 3rem;
+            padding: 0.5rem;
+            background-color: $category-background-color;
+            &-item_count{
+                align-self: center;
+            }
         }
     }
 }
 .mainlogofit{
     max-height: 5rem;
     max-width: 10rem;
+    padding: 0.4rem;    
     object-fit: contain;
     @media screen and (max-width:$breakpoint-tablet){
         max-height: 4rem;
-        max-width: 8rem;
+        max-width: 10rem;
+        padding-left: 0;
     }
     @media screen and (max-width:$breakpoint-mobile){
         max-height: 3.5rem;
         max-width: 7rem;
+        
     }
 }
+.cart-image{
+    width: 2.5rem;
+}
+
 

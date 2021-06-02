@@ -1,13 +1,15 @@
 @import "../../../assets/styles/main.scss";
+$home-card-padding: 1rem;
+$card-min-height : 10vh;
 .main__card{
         &_subcontainer{
             max-width: $width-content-container;
             box-shadow: $home-card-container-shadow;
             display: flex;
             justify-content: space-between;
-            margin: 0 auto;
-            padding: 10px;
-            min-height: 10vh;
+            margin: $zero-margin-auto;
+            padding: $home-card-padding;
+            min-height: $card-min-height ;
             &__text{
                 flex-grow: 1;
             }

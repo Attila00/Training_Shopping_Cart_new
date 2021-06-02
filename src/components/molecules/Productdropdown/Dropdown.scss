@@ -1,0 +1,34 @@
+@import '../../../assets/styles/main.scss';
+$dropdown-item-padding : 1rem;
+.dropdown{
+    position: relative;
+    user-select: none;
+    &-header{
+        display: flex;
+        align-items: center;
+        width: -webkit-fill-available;
+        justify-content: space-between;
+        position: relative;
+        border: 1px solid #dfdfdf;
+        border-radius: 3px;
+        line-height: 0.1rem;
+        &-title{
+            font-weight: 300;
+        }
+    }
+    &-list{
+        position: absolute;
+        z-index: 10;
+        &-item{
+            display: inline-block;
+            overflow: hidden;
+            width: 100%;
+            padding: $gen-pad-margin $dropdown-item-padding;
+            font-size: 1.5rem;
+            text-overflow: ellipsis;            
+        }
+    }
+}
+.dropdowniconfit{
+    width: 1.3rem;
+}
