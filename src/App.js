@@ -8,8 +8,7 @@ import Home from './components/Pages/Home/Home';
 import Footer from './components/Organisms/Footer/Footer';
 import Register from './components/Pages/Register/Register';
 import { Cart } from './components/Pages/Cart/Cart';
-import { GlobalContext } from './Context/globalContext';
-import { Route, Switch, HashRouter as Router, Redirect} from 'react-router-dom';
+import { Route, Switch, BrowserRouter as Router, Redirect} from 'react-router-dom';
 import Success from './components/Pages/Success/Success';
 
 const App =()=>{
