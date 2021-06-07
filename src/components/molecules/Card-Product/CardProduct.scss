@@ -41,8 +41,12 @@ $description-card-desktop-height: 5rem;
             grid-column: 2 / 3;
             grid-row: 2 / 3;
             font-size: $font-small;
-            height: 7rem;
+            height: 6rem;
             margin-top: $zero-margin;
+            margin-bottom: $zero-margin;
+            @media screen and(min-width:$breakpoint-mobile){
+                height: 7rem;
+            }
             @media screen and(min-width:$breakpoint-tablet){
                 height: $description-card-desktop-height;
                 grid-column: 1 / 3;
