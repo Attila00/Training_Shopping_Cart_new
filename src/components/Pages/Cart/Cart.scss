@@ -1,0 +1,72 @@
+@import '../../../assets/styles/main.scss';
+.main_cart_container{
+    padding-top: 3rem;
+    background-color: $category-background-color;
+    width: $full-width;
+    height: 100vh;
+    @media screen and(min-width:$breakpoint-tablet){
+        padding-top: $zero-margin;
+        height: inherit;
+    }
+    &-item_count{
+        background-color:  $background-primary;
+        padding: $padding-one;
+        margin-top: $zero-margin;
+        @media screen and(min-width:$breakpoint-tablet){
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            background-color: rgb(56, 55, 55);
+            color: $background-primary;
+            padding-top: $zero-margin;
+            padding-bottom: $zero-margin;
+        }
+        &-items{
+            margin: $zero-margin;
+            font-weight: unset;
+            font-size: unset;
+        }
+        &-close{
+            background-color: unset;
+            color: unset;
+        }
+    }
+    &-items{
+        max-height: 50vh;
+        overflow: scroll;
+    }
+    &-banner{
+        display: flex;
+        background-color:  $background-primary;
+        padding: $padding-one; 
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0.7rem;
+        span{
+            padding-left: $padding-one;
+            font-size: $font-small;
+        }
+    }
+    &-fixed_footer{
+        background-color:  $background-primary;
+        text-align: center;
+        position: fixed;
+        left: $zero-margin;
+        bottom: $zero-margin;
+        width: $full-width;
+        &-button{
+            display: flex;
+            justify-content: space-between;
+            width: -webkit-fill-available;
+            margin: $padding-one;
+            padding: $padding-main-logo;
+        }
+    }
+}
+.footerimagefitcart{
+    max-height: 1.8rem;
+    object-fit: contain;
+    @media screen and(min-width:$breakpoint-mobile )and(max-width:$breakpoint-tablet){
+        max-height: 3.6rem;
+    }
+}
