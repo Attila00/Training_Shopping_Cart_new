@@ -18,5 +18,8 @@ export const CartReducer = (state, action) =>{
             return {...state, selectedProducts:removedProduct};
         case 'HANDLE_MODAL':
             return {...state, isOpen:action.payload.isDialogOpen}
+        case 'SIGNED_UP':
+            alert("signed red"+ action.payload.loggedIn)
+            return {...state, isUser:{...action.payload}}
     }
 }

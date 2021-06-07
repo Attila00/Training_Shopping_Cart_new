@@ -6,6 +6,11 @@ import { sortByCategory } from '../../src/utils/utils';
 export const GlobalContext = React.createContext();
 export const GlobalProvider = ({children}) =>{
     const initialState = {
+        isUser:{
+            loggedIn:false,
+            username:"",
+            name:""
+        },
         isOpen: false,
         selectedProducts :[],
         categories: sortByCategory(categories, 'order'),
