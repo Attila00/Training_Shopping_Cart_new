@@ -1,36 +1,41 @@
-import React from 'react';
-import Button from '../../atoms/Button/Button';
-import Icon from '../../atoms/Icon/Icon';
-import {useTranslation} from 'react-i18next';
-import '../../../assets/images/upward.png'
+import React, { useEffect } from 'react';
 import './Dropdown.scss';
-const Dropdown = ({list, headerTitle, selected, selectedCategory, itemClickHandler, displayProp}) =>{
+import Icon from '../../atoms/Icon/Icon';
+import Button from '../../atoms/Button/Button';
+import { useTranslation } from 'react-i18next';
+const Dropdown = ({list, headerTitle, selectedCategory, itemClickHandler, displayProp}) =>{
     const [isListOpen, setIsListOpen] = React.useState(false);
     const [headerTit, setHeaderTit] = React.useState(headerTitle);
     const {t} = useTranslation();
-    const handleItemClick = (e) =>{
-        setHeaderTit(e.target.name);
-        itemClickHandler(e);
+
+    //To observe selected category change and update headertitle accordingly
+    useEffect(() =>{ 
+      list.some(item => item.id == selectedCategory && setHeaderTit(item.name)) 
+    },[selectedCategory]);
+
+    //To handle chnage of category
+    const handleItemClick = (id, name) =>{
+        setHeaderTit(name);
         setIsListOpen(isListOpen => !isListOpen);
-    }
+        itemClickHandler(id, name);
+    };
     return(
     <div className="dropdown">
         <Button type="primary"  reqClass={`dropdown-header`}  buttonclickhandler={() => setIsListOpen(isListOpen => !isListOpen)}>
             <h2 className="dropdown-header-title">{t(headerTit)}</h2>
-            {isListOpen ? <Icon source="../../../assets/images/upwardicon.png" reqclass={`dropdowniconfit`}/> : <Icon source="../../../assets/images/downwardicon.png" reqclass={`dropdowniconfit`}/>}
+            {isListOpen ? <Icon source="../../../assets/images/up-arrow.png" reqclass={`dropdowniconfit`}/> : <Icon source="../../../assets/images/down-arrow.png" reqclass={`dropdowniconfit`}/>}
         </Button>   
         {isListOpen && (
-        <div  role="list"  className="dropdown-list">
+        <ol className="dropdown-list">
           {list.map(item => {
-            if(item.order > 0) return <button type="button" id={item.id} name={item[displayProp]} className={`dropdown-list-item ${selectedCategory == item.id ? "selected" : ""}`}
-              key={item.id}
-              onClick={handleItemClick} >
+            if(item.order > 0) return <Button key={item.id} id={item.id} name={item[displayProp]} role="listitem"
+            reqClass={`dropdown-list-item ${selectedCategory == item.id ? "selected" : ""}`} 
+            buttonclickhandler={() => handleItemClick(item.id, item.name)}>
               {item[displayProp]}
-            </button>
-          }
+              </Button>}
           )}
-          </div>
-      )}
+        </ol>
+        )}
 
     </div>
     )

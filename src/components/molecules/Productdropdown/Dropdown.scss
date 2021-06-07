@@ -1,5 +1,6 @@
 @import '../../../assets/styles/main.scss';
 $dropdown-item-padding : 1rem;
+$width-size : 1.5rem;
 .dropdown{
     position: relative;
     user-select: none;
@@ -9,9 +10,8 @@ $dropdown-item-padding : 1rem;
         width: -webkit-fill-available;
         justify-content: space-between;
         position: relative;
-        border: 1px solid #dfdfdf;
-        border-radius: 3px;
-        line-height: 0.1rem;
+        border: $bottom-border-solid #dfdfdf;
+        line-height: $bottom-border;
         &-title{
             font-weight: 300;
         }
@@ -19,16 +19,18 @@ $dropdown-item-padding : 1rem;
     &-list{
         position: absolute;
         z-index: 10;
+        padding: $zero-margin;
+        margin: $zero-margin;
         &-item{
             display: inline-block;
             overflow: hidden;
-            width: 100%;
+            width: $full-width;
             padding: $gen-pad-margin $dropdown-item-padding;
-            font-size: 1.5rem;
+            font-size:$width-size;
             text-overflow: ellipsis;            
         }
     }
 }
 .dropdowniconfit{
-    width: 1.3rem;
+    width:$width-size;
 }

@@ -1,0 +1,27 @@
+@import "../../../assets/styles/main.scss";
+.products_categories{
+    background-color: $category-background-color;
+    min-width: 14rem;
+    &_list{
+        display: flex;
+        flex-direction: column;
+        margin: $zero-margin;
+        padding: $zero-margin;
+        &-item-button{
+            border-bottom: $bottom-border solid $default-black-color;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: unset;
+            color: unset;
+            span{
+                font-weight: unset;
+                font-size: $font-large;
+            }
+        }
+
+    }
+}
+.iconfitcross{
+    max-width: 1.5rem;
+}
