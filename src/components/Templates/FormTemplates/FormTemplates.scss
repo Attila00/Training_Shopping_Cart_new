@@ -1,0 +1,48 @@
+@import "../../../assets/styles/main.scss";
+$common-padding-margin: 3rem;
+.main-section{
+    display: flex;
+    flex-direction: column;
+    margin: $zero-margin-auto;
+    justify-content: space-evenly;
+    margin-top: $common-padding-margin;
+    @media screen and(min-width:$breakpoint-tablet){
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: $common-padding-margin;
+        max-width: $width-content-container;
+    }
+    &_description{
+        text-align: center;
+        @media screen and(min-width:$breakpoint-tablet){
+            padding-left: 6rem;
+            width: 40%;
+            text-align: unset;
+        }
+    }
+    &_form{
+        display: flex;
+        flex-direction: column;
+        @media screen and(min-width:$breakpoint-tablet){
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    &_form form{
+        margin: $zero-margin-auto;
+        width: 75%;
+        @media screen and(min-width:$breakpoint-tablet){
+            margin: unset;
+            width: 50%;
+        }
+          
+    }
+}
+.form-width{
+    width: 100%;
+}
+.login-button{
+    width: 100%;
+    margin-top: $form-field-margin-top;
+}

@@ -10,10 +10,6 @@ $card-min-height : 10vh;
             margin: $zero-margin-auto;
             padding: $home-card-padding;
             min-height: $card-min-height ;
-            &__text{
-                flex-grow: 1;
-            }
-            
         }
 }
 .imagefithome{

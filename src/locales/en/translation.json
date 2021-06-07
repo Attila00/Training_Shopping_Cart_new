@@ -5,6 +5,9 @@
         "3":"SignIn",
         "4":"Register"
     },
+    "home":{
+        "button":"Explore"
+    },
     "products":{
         "button":"Buy Now",
         "mrp" :"MRP",
