@@ -1,5 +1,5 @@
 import React from 'react';
-import './Scrolltop.scss';
+import './ScrollTop.scss';
 import Button from '../../atoms/Button/Button';
 import {scrollTop, compareScrollHeight} from '../../../utils/scrollutils';
 const Scrolltop = ({showOnHeight=50}) =>{
