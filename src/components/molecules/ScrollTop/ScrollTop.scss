@@ -1,12 +1,12 @@
+@import "../../../assets/styles/main.scss";
 .scroll-button{
     display: none;
     position: fixed;
-    bottom: 20px;
-    right: 30px;
+    bottom: 4rem;
+    right: 3rem;
     z-index: 99;
     font-size: 1.5rem;
     border: none;
     outline: none;    
-    padding: 1rem;
-    border-radius: 4px;
+    padding: $padding-one !important;
 }

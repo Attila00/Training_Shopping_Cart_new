@@ -1,11 +1,17 @@
-$text-color: #0000;
+$default-black-color: rgba(0, 0, 0, 0.815);
 $primary-button-background: #d0295b;
 $button-text-color: #ffff;
+$input-focus__color: hsl(236, 87%, 51%);
+
 $home-card-container-shadow :0px 30px 20px -33px #a19f9f;
-$header-container-shadow :0px 30px 20px -36px #a19f9f;
+$header-container-shadow :0px 30px 25px -40px #a19f9f;
+$header-container-shadow-mobile :0px 30px 25px -30px #a19f9f;
+$bottom-border : 0.1rem;
+$bottom-border-solid : 0.1rem solid;
+$full-width:100%;
 
 $product-card-width-tablet: 15vh;
-$width-content-container:74rem;
+$width-content-container:64rem;
 // $category-background-color: rgb(238, 237, 237);
 $category-background-color: #ededed;
 $background-primary :  hsl(0, 0%, 100%);
@@ -16,30 +22,37 @@ $font-medium: 0.9rem;
 $font-large: 1rem;
 
 // Viewport breakpoints
-$breakpoint-mobile: 480px;
-$breakpoint-tablet: 770px;
-$breakpoint-desktop: 1024px;
+$breakpoint-mobile: 481px;
+$breakpoint-tablet: 769px;
+$breakpoint-desktop: 1025px;
 
 $gen-pad-margin:0.5rem;
 $zero-margin-auto: 0 auto;
+$zero-margin: 0;
+$flex-grow-one: 1;
+$padding-one: 1rem;
+$max-height: 10rem; 
+$padding-main-logo: 0.4rem;
 $form-field-margin-top:1.4rem;
-$header:red;
+$product-column-width-mobile : 8rem;
+$product-column-width-nonmobile : 12rem;
+
 body {
 font-size:$font-medium ;
-margin: 0;
+margin: $zero-margin;
 background-color: $background-primary;
 font: 100%  "-apple-system",system-ui,"BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
 scroll-behavior: smooth;
-::-webkit-scrollbar{
+&::-webkit-scrollbar{
     width: 0.5rem;
     &-track{
         background-color: inherit;
         cursor: pointer;
     }
     &-thumb{
-        background:rgb(160, 160, 238);
+        background:rgb(66, 66, 71);
         border-radius: 10px;
-        border: 1px solid black;
+        border: $bottom-border $default-black-color;
     }
     &-thumb:hover{
         background:  rgb(52, 52, 54) !important;
@@ -52,7 +65,7 @@ scroll-behavior: smooth;
 a{
     text-decoration: none;
     cursor: pointer;
-    color: black;
+    color: $default-black-color;
 }
 button{
     border-radius: 1px;
@@ -60,7 +73,7 @@ button{
 }
 .desc-text{
     font-size: $font-small;
-    font-weight: 500;
+    font-weight: 400;
 }
 .selected{
     font-weight: bold;
