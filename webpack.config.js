@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const htmlPlugin = new HtmlWebPackPlugin({
     template:'./public/index.html',
     filename: 'index.html'
@@ -30,5 +31,11 @@ const path = require("path");
              }
          ]
      },
-     plugins:[htmlPlugin]
+     plugins:[htmlPlugin,new CopyPlugin({
+        patterns: [
+          { from: "src/assets/images", to: "assets/images" },
+          { from: "src/_redirects", to:"" },
+          { from: "src/locales", to:"locales" },
+        ],
+      })]
  };
