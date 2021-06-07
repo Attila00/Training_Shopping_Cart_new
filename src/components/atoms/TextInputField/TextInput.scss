@@ -1,24 +1,23 @@
 @import "../../../assets/styles/main.scss";
-$--color__accent: #6200ee;
-  .floating__input {
-    padding: $form-field-margin-top 0rem 0.6rem 0;
-    font-size: 1rem;
-    width: 100%;
-    border: 0;
+  .input {
+    padding: $form-field-margin-top $zero-margin 0.6rem $zero-margin;
+    font-size: $font-large;
+    width: $full-width;
+    border: $zero-margin;
     outline: none;
-    border-bottom: 0.1rem solid grey;
+    border-bottom: $bottom-border-solid grey;
     &:focus{
-      border-bottom: 0.1rem solid $--color__accent;
+      border-bottom: $bottom-border-solid $input-focus__color;
     }
     // for removing main placeholder on focus
     &::placeholder{
-      color: rgba(0, 0, 0, 0);
+      color: rgba($zero-margin, $zero-margin, $zero-margin, $zero-margin);
     } 
   }
 
-  .floating__label {
+  .label {
     position: relative;
-    max-height: 0;
+    max-height: $zero-margin;
     pointer-events: none;
     font-size: $font-medium;
     // for up placeholder properties
@@ -30,16 +29,20 @@ $--color__accent: #6200ee;
     }
   }
   // for moving placeholder down
-  .floating__input:placeholder-shown + .floating__label::before {
+  .input:placeholder-shown + .label::before {
     transform: translate3d(0, -2.2rem, 0) scale3d(1, 1, 1);
     
   }
   // for moving placeholder up
-  .floating__label::before,
-  .floating__input:focus + .floating__label::before {
+  .label::before,
+  .input:focus + .label::before {
     transform: translate3d(0, -3.12rem, 0) scale3d(0.82, 0.82, 1);
   }
   // for changing placeholder color on focus
-  .floating__input:focus + .floating__label::before {
-    color: $--color__accent;
+  .input:focus + .label::before {
+    color: $input-focus__color;
+  }
+  .text-error{
+    color:red;
+    text-align: start;
   }
