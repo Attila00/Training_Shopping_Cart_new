@@ -3,7 +3,6 @@
     padding-top: 3rem;
     background-color: $category-background-color;
     width: $full-width;
-    height: 100vh;
     @media screen and(min-width:$breakpoint-tablet){
         padding-top: $zero-margin;
         height: inherit;
@@ -12,6 +11,7 @@
         background-color:  $background-primary;
         padding: $padding-one;
         margin-top: $zero-margin;
+        height: 3rem;
         @media screen and(min-width:$breakpoint-tablet){
             display: flex;
             justify-content: space-between;
@@ -32,8 +32,14 @@
         }
     }
     &-items{
-        max-height: 50vh;
+        height: calc(80vh - 11rem);
         overflow: scroll;
+        @media screen and(min-width:$breakpoint-mobile){
+            height: calc(80vh - 7rem);
+        }
+        @media screen and(min-width:$breakpoint-tablet){
+            height: calc(80vh - 10rem);
+        }
     }
     &-banner{
         display: flex;
@@ -50,16 +56,22 @@
     &-fixed_footer{
         background-color:  $background-primary;
         text-align: center;
-        position: fixed;
         left: $zero-margin;
         bottom: $zero-margin;
-        width: $full-width;
+        padding: $gen-pad-margin;
+        height: 6rem;
+        @media screen and(min-width:$breakpoint-mobile ){
+            height: 5rem;
+        }
+        @media screen and(min-width:$breakpoint-tablet){
+            height: 8rem;
+        }
         &-button{
             display: flex;
             justify-content: space-between;
             width: -webkit-fill-available;
-            margin: $padding-one;
-            padding: $padding-main-logo;
+            margin: $padding-one $zero-margin;
+            padding: $zero-margin $padding-main-logo;
         }
     }
 }
@@ -69,4 +81,7 @@
     @media screen and(min-width:$breakpoint-mobile )and(max-width:$breakpoint-tablet){
         max-height: 3.6rem;
     }
+}
+.closeiconfit{
+    max-width: 1rem;
 }

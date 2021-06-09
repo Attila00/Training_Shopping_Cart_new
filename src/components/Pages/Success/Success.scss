@@ -1,0 +1,10 @@
+@import '../../../assets/styles/main.scss';
+.success_main{
+    text-align: center;
+    &-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: $gen-pad-margin;
+    }
+}

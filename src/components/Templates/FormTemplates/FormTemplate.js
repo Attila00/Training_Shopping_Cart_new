@@ -32,7 +32,7 @@ const FormTemplate = ({inputListUsed, title, description, tabTitle}) =>{
             type:'SIGNED_UP',
             payload:{loggedIn:true, ...payload}
         });
-        history.push('/');
+        history.push(location.redirectToSuccess ? '/success' : '/');
     };
 
     //To handle onsubmit of form.
@@ -72,8 +72,8 @@ const FormTemplate = ({inputListUsed, title, description, tabTitle}) =>{
                         />);
                 })}
                 <Button reqClass="login-button" buttontype="submit" buttonclickhandler={submitfinal}>{t(title)}</Button>
-                { location.pathname == '/register' ?<><Link className="main-section_form-message" to='/login'>{t('login.title')}</Link> {t('login.memberalready')}</> 
-                : <>{t('register.newhere')}<Link className="main-section_form-message" to='/register'>{t('register.title')}</Link></>}
+                { location.pathname == '/register' ?<><b><Link className="main-section_form-message" to={{pathname:'/login' , redirectToSuccess:location.redirectToSuccess}}>{t('login.title')}</Link></b> {t('login.memberalready')}</> 
+                : <>{t('register.newhere')}<b><Link className="main-section_form-message" to={{pathname:'/register' , redirectToSuccess:location.redirectToSuccess}} >{t('register.title')}</Link></b></>}
             </form> 
             </section>
         </main>
