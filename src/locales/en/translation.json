@@ -50,5 +50,9 @@
     },
     "error":{
         "providematching":"Please provide matching passwords" 
+    },
+    "success":{
+        "congratulations":"Congratulations",
+        "orderplaced":"Your order has been placed successfully, and will be delivered by "
     }
 }

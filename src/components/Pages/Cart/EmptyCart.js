@@ -11,7 +11,7 @@ const EmptyCart = ({closeDialog, isDesktop}) =>{
         <main className="main_cart_container-empty">
             <header className="main_cart_container-empty-item_count">
                 <h3 className="main_cart_container-empty-item_count-items"><b>{t('cart.mycart')}</b> ( 0 item)</h3>
-                {isDesktop ? <Button reqClass="main_cart_container-empty-item_count-close_button" buttonclickhandler={closeDialog}> <Icon source="../../../assets/images/close.png"></Icon></Button> : ""}
+                {isDesktop ? <Button reqClass="main_cart_container-empty-item_count-close_button" buttonclickhandler={closeDialog}> <Icon source="../../../assets/images/close.png" reqclass={`closeiconfit`}></Icon></Button> : ""}
             </header>
             <section className="main_cart_container-empty-message">
                 <h3>{t('cart.noitems')}</h3>

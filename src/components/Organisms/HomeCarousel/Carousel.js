@@ -4,7 +4,8 @@ import Icon from "../../atoms/Icon/Icon";
 import bannerImages from "../../../../server/banners/index.get.json";
 export default function Carousel() {
   const [current, setCurrent] = useState(1);
-  const [touchPosition, setTouchPosition] = useState(null);
+  const [touchPosition, setTouchPosition] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
   const length = bannerImages.length;
 
   //To automatically change banners 
@@ -17,27 +18,19 @@ export default function Carousel() {
   const handleSlide = (slideOrder) => {
     setCurrent(slideOrder);
   };
-  //Captures finger touch
-  const handleTouchStart = (e) => {
-    const touchDown = e.touches[0].clientX;
-    setTouchPosition(touchDown);
-  };
   //Captures finger swipe move
-  const handleTouchMove = (e) => {
-    const touchDown = touchPosition;
-    if (touchDown === null) {
-      return;
-    }
-    const currentTouch = e.touches[0].clientX;
-    const diff = touchDown - currentTouch;
-    if (diff > 10) {
+  const handleTouchEnd = () => {
+    if(touchEnd){
+    const diff = touchPosition - touchEnd;
+    if (diff > 15) {
       handleSlide(current === length ? 1 : current + 1);
     }
-    if (diff < -10) {
+    if (diff < -15) {
       handleSlide(current === 1 ? length : current - 1);
     }
     setTouchPosition(null);
-  };
+  }
+};
   return (
     <section className="carousel">
       <div className="carousel__container">
@@ -47,8 +40,9 @@ export default function Carousel() {
             className={
               data.order === current ? "carousel__container__slide active": "carousel__container__slide"
             }
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}>
+            onTouchStart={e => {setTouchPosition(e.touches[0].clientX);setTouchEnd(0)}}
+            onTouchMove={e => {setTouchEnd(e.touches[0].clientX)}}
+            onTouchEnd={handleTouchEnd}>
             {data.order === current && (
               <Icon
                 source={data.bannerImageUrl}
