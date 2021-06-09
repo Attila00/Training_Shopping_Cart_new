@@ -10,7 +10,7 @@ const Dropdown = ({list, headerTitle, selectedCategory, itemClickHandler, displa
 
     //To observe selected category change and update headertitle accordingly
     useEffect(() =>{ 
-      list.some(item => item.id == selectedCategory && setHeaderTit(item.name)) 
+      list.find(item => item.id == selectedCategory && setHeaderTit(item.name)) 
     },[selectedCategory]);
 
     //To handle chnage of category

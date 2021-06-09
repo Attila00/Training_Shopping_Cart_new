@@ -23,7 +23,7 @@ const CardProduct = ({details}) =>{
                 alt={details.name} 
                 pictureReqClass={'product_card-image'}
                 reqclass={'imagefitproduct'}/> 
-            <p className="product_description">{details.description}</p>
+            <p title={details.description} className="product_description">{details.description}</p>
             {isDesktop ? <p className="product_price">{t('products.mrp')} Rs.{details.price}</p> : <></>}
                 {details.addedtocart && <span className="product_added-message">{t('products.addedtocart')}</span>}
                 {!details.addedtocart && <Button type="primary" reqClass={`product_buybutton`} buttonclickhandler={addToCart}>{t('products.button')} {isDesktop ? "" :`@ Rs.${details.price}`}</Button>}
