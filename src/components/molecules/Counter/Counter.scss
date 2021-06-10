@@ -1,0 +1,17 @@
+@import "../../../assets/styles/main.scss";
+$button-width: 2rem;
+.main_counter{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.2rem;
+    width:$product-column-width-mobile;
+    height: 3rem;
+}
+.counter-button{
+    width: $button-width;
+    padding: $zero-margin !important;
+    border-radius: 0.3rem;
+    max-height: $button-width;
+    font-size: 1.5rem;
+}

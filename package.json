@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "webpack-dev-server": "webpack-dev-server",
-    "dev": "webpack serve --config webpack.config.js --content-base src/",
+    "dev": "webpack serve --config webpack.config.js --content-base src/  --mode=development",
     "prod": "webpack --mode=production"
   },
   "keywords": [],
@@ -25,7 +25,8 @@
     "react-router-dom": "^5.2.0",
     "sass": "^1.32.12",
     "sass-loader": "^11.0.1",
-    "style-loader": "^2.0.0"
+    "style-loader": "^2.0.0",
+    "styled-components": "^5.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
@@ -33,6 +34,7 @@
     "@babel/preset-env": "^7.14.0",
     "@babel/preset-react": "^7.13.13",
     "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.0",
     "html-webpack-plugin": "^5.3.1",
     "path": "^0.12.7",
     "webpack": "^5.36.1",

@@ -8,23 +8,26 @@ $card-min-height : 10vh;
             display: flex;
             justify-content: space-between;
             margin: $zero-margin-auto;
-            padding: $home-card-padding;
+            padding: $padding-one;
             min-height: $card-min-height ;
         }
 }
 .imagefithome{
-    max-height: 10rem;
-    max-width: 15rem;
+    max-height: $max-height;
+    max-width: 16rem;
     aspect-ratio: 3/2;
     object-fit: contain;
     @media screen and(max-width:$breakpoint-tablet){
-        max-width: 12rem;
+        max-width: $product-column-width-nonmobile;
     }
     @media screen and(max-width:$breakpoint-mobile){
-        max-width: 10rem;
-        aspect-ratio: 1;
+        max-width:$product-column-width-mobile;
+        aspect-ratio: $flex-grow-one;
     }
 }
+.picturefithome{
+    align-self: center;
+}
 .card-text-section{
-    flex-grow: 1;
+    flex-grow: $flex-grow-one;
 }

@@ -1,18 +1,18 @@
 import React from 'react';
+import './Card.scss';
 import Icon from '../../atoms/Icon/Icon';
 import CardText from '../../atoms/CardText/CardText';
-import './Card.scss';
 const Card = ({categoryImage, content, imageLeft="", buttonclickhandler, id, name}) =>{
     return (
     <>
     {imageLeft? 
-        <section id={id} tabIndex={0} name={`${name} card`} className="main__card_subcontainer">
-            <Icon source={categoryImage} tabIndex={0} alt={`${name} image`} reqclass={`imagefithome`}/> 
+        <section id={id}  name={`${name} card`} className="main__card_subcontainer">
+            <Icon source={categoryImage}  alt={`${name} image`} reqclass={`imagefithome`} pictureReqClass={`picturefithome`}/> 
             <CardText content={content} buttonclickhandler={buttonclickhandler} reqClass="card-text-section"/>
         </section>: 
-        <section tabIndex={0} name={`${name} card`} className="main__card_subcontainer"> 
+        <section  name={`${name} card`} className="main__card_subcontainer"> 
             <CardText content={content} buttonclickhandler={buttonclickhandler} reqClass="card-text-section"/>
-            <Icon source={categoryImage} tabIndex={0} alt={`${name} image`} reqclass={`imagefithome`}/>
+            <Icon source={categoryImage}  alt={`Image of ${name}`} reqclass={`imagefithome`} pictureReqClass={`picturefithome`}/>
         </section> 
     }
     </>

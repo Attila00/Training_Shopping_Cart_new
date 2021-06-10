@@ -1,0 +1,32 @@
+@import "../../../assets/styles/main.scss";
+.products_categories{
+    background-color: $category-background-color;
+    width: 11rem;
+    @media screen and(min-width:$breakpoint-tablet) {
+        width: 16rem;
+    }
+    &_list{
+        display: flex;
+        flex-direction: column;
+        margin: $zero-margin;
+        padding: $zero-margin;
+        &-item-button{
+            border-bottom: $bottom-border solid rgba(0,0,0, 0.25);
+            margin-left: $gen-pad-margin;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: unset;
+            color: unset;
+            span{
+                font-size: $font-medium;
+                color: #777777;
+                text-align: initial;
+            }
+        }
+
+    }
+}
+.iconfitcross{
+    max-width: 1.5rem;
+}

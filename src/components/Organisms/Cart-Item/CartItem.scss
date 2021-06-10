@@ -1,0 +1,36 @@
+@import "../../../assets/styles/main.scss";
+.main_cart_container-item_section{
+    background-color:  $background-primary;
+    display: flex;
+    padding: $gen-pad-margin;
+    margin-top: $gen-pad-margin;
+    margin-bottom: $gen-pad-margin;
+    &-details{
+        flex: $flex-grow-one;
+        h3{
+            font-size: $font-small;
+            @media screen and(min-width:$breakpoint-mobile){
+                font-size: $font-small;
+            }
+        }
+        &_section{
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: $font-large;
+            &-cost{
+                align-self: center;
+            }
+            &-total_cost{
+                flex: $flex-grow-one;
+                display: flex;
+                justify-content: flex-end;
+                align-self: center;
+            }
+        }
+    }
+}
+.imagefitcart{
+    max-height: 4.5rem;
+    object-fit: contain;
+}

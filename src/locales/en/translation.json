@@ -2,8 +2,9 @@
     "headernav":{
         "1":"Home",
         "2":"Products",
-        "3":"SignIn",
-        "4":"Register"
+        "3":"Login",
+        "4":"Register",
+        "hello":"Hello "
     },
     "home":{
         "button":"Explore"
@@ -13,14 +14,16 @@
         "mrp" :"MRP",
         "dropdown":{
             "title":"Select Category"
-        }
+        },
+        "addedtocart":"Added to Cart"
     },
     "login":{
         "title":"Login",
-        "desc":"Get access to your Orders, Wishlists and Recommendations"
+        "desc":"Get access to your Orders, Wishlists and Recommendations",
+        "memberalready": "If already a member ? "
     },
     "register":{
-        "title":"Signup",
+        "title":"Register",
         "desc":"We do not share ur personal details with anyone",
         "inputs":{
             "1":"First Name",
@@ -28,7 +31,8 @@
             "3":"Email",
             "4":"Password",
             "5":"Confirm Password"
-        }
+        },
+        "newhere":"If new around here - "
     },
     "cart":{
         "mycart":"My Cart",
@@ -38,9 +42,17 @@
         "proceed":"Proceed to checkout",
         "noitems":"No items in your cart",
         "emptycartmessage":"Your facourite item's are just a click away",
-        "startshopping":"Start Shopping"
+        "startshopping":"Start Shopping",
+        "items":"items"
     },
     "footer":{
         "message":"Copyright 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd"
+    },
+    "error":{
+        "providematching":"Please provide matching passwords" 
+    },
+    "success":{
+        "congratulations":"Congratulations",
+        "orderplaced":"Your order has been placed successfully, and will be delivered by "
     }
 }

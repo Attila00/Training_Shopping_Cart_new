@@ -5,3 +5,11 @@ export const updateTitle = (title) =>{
 export const sortByCategory = (array, category) =>{
     return array.sort((a, b) => a[category] - b[category]);
 }
+
+export const isNotUndefined = (val) =>{
+    return val != undefined && val != null;
+}
+
+export const remSpaces = (str) =>{
+    return str.split(" ").join("");
+}

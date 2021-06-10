@@ -1,28 +1,30 @@
 @import "../../../assets/styles/main.scss";
 .footer-main{
     background-color: $category-background-color;
-    font-size: $font-medium;
-    // height: 1.5rem;
+    font-size: 0.67rem;
+    @media screen and (min-width:$breakpoint-mobile) {
+        font-size: $font-large;
+    }
     &_subcontainer{
-        max-width: 74rem;
+        max-width:$width-content-container;
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: $zero-margin-auto;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: $padding-one;
+        padding-right: $padding-one;
         &__text{
-            flex-grow: 1;
+            flex-grow: $flex-grow-one;
+        }  
+        &-image_button{
+            background-color: unset;
+            padding: unset;
         }
-        
     }
 }
 .imagefitlogin{
-    // display: none;
-    // @media screen and (min-width:$breakpoint-tablet) {
         height: 2.3rem;
         object-fit: contain;
         display: unset;
-    // }
 
 }

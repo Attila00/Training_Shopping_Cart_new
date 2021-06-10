@@ -1,10 +1,17 @@
 @import "../../../assets/styles/main.scss";
+$home-card-font-size-mobile: 0.7rem;
 .card-text-main{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     h3{
-        margin-bottom: 0px;
+        margin-bottom: $zero-margin;
+    }
+}
+.home-card-button{
+    font-size: $home-card-font-size-mobile;
+    @media screen and(min-width:$breakpoint-mobile){
+        font-size: $font-small;
     }
 }

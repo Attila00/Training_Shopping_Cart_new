@@ -1,11 +1,13 @@
 import React from 'react';
+import './CardProduct.scss';
 import Icon from '../../atoms/Icon/Icon';
 import Button from '../../atoms/Button/Button';
-import './CardProduct.scss';
-import {useTranslation} from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { GlobalContext } from '../../../Context/globalContext';
+import { useMediaQuery } from '../../../customHooks/useMediaQuery';
 const CardProduct = ({details}) =>{
     const {dispatch} = React.useContext(GlobalContext);
+    let isDesktop = useMediaQuery('(min-width:769px)');
     const {t} = useTranslation();
     const addToCart = () =>{        
         dispatch({
@@ -15,25 +17,16 @@ const CardProduct = ({details}) =>{
     }
     return (
         <>
-        <div className="product" tabIndex="0" role="card">
+        <div className="product" role="card">
             <h3 className="product_title">{details.name}</h3>
-            <div className="product_card-image" tabIndex="0">
-                <Icon  source={details.imageURL}
+            <Icon  source={details.imageURL}
                 alt={details.name} 
+                pictureReqClass={'product_card-image'}
                 reqclass={'imagefitproduct'}/> 
-            </div>
-            <p className="product_description">{details.description}</p>
-            <section className="product_pricing_buybutton">
-                {details.addedtocart && <p>Added to Cart</p>}
-                {!details.addedtocart && <Button type="primary" buttonclickhandler={addToCart}>{t('products.button')} @ Rs.{details.price}</Button>}
-            </section>
-            <section className="product_desktop_pricing">
-                <span className="product_desktop_pricing_price">{t('products.mrp')} Rs.{details.price}</span>
-                <div className="product_desktop_pricing_buybutton">
-                {details.addedtocart && <p>Added to Cart</p>}
-                {!details.addedtocart && <Button type="primary" buttonclickhandler={addToCart}>{t('products.button')}</Button>}
-                </div>
-            </section>
+            <p title={details.description} className="product_description">{details.description}</p>
+            {isDesktop ? <p className="product_price">{t('products.mrp')} Rs.{details.price}</p> : <></>}
+                {details.addedtocart && <span className="product_added-message">{t('products.addedtocart')}</span>}
+                {!details.addedtocart && <Button type="primary" reqClass={`product_buybutton`} buttonclickhandler={addToCart}>{t('products.button')} {isDesktop ? "" :`@ Rs.${details.price}`}</Button>}
         </div>
         </>
     )

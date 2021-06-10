@@ -28,6 +28,9 @@ $common-padding-margin: 3rem;
             display: flex;
             flex-direction: column;
         }
+        &-message{
+            color: $input-focus__color;
+            }
     }
     &_form form{
         margin: $zero-margin-auto;
@@ -40,9 +43,9 @@ $common-padding-margin: 3rem;
     }
 }
 .form-width{
-    width: 100%;
+    width: $full-width;
 }
 .login-button{
-    width: 100%;
+    width: $full-width;
     margin-top: $form-field-margin-top;
 }

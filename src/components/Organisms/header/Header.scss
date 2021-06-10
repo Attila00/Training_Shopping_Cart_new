@@ -1,10 +1,16 @@
 @import "../../../assets/styles/main.scss";
-$header-margin-tb: 0.4rem;
+$padding-nav : 5rem;
+$padding-nav-tab : 2rem;
+$padding-login : 4rem;
 .header{
-    width: 100%;    
-    box-shadow: $header-container-shadow;
+    width: $full-width;    
+    box-shadow: $header-container-shadow-mobile;
     align-content: center;
-    margin-top: 0px;
+    margin-top: $zero-margin;
+    font-weight: 500;
+    @media screen and(min-width:$breakpoint-mobile){
+        box-shadow: $header-container-shadow;
+    }
 
     &__subheader{
         display: flex;
@@ -12,25 +18,32 @@ $header-margin-tb: 0.4rem;
         justify-content: space-between;
         margin: $zero-margin-auto;
         @media screen and (min-width:$breakpoint-tablet){
-            margin-top: $header-margin-tb;
+            // margin-top: $padding-main-logo;
         }
     }
     .header__nav-home-item{
         display: none;
         @media screen and (min-width:$breakpoint-mobile){
-            flex: 1;
+            flex: $flex-grow-one;
             align-self: flex-end;
-            padding-left: 5rem;
-            padding-bottom: 1rem;
+            padding-left: $padding-nav-tab;
+            padding-bottom: $padding-one;
+            display: unset;
+        }
+        @media screen and (min-width:$breakpoint-tablet){
+            flex: $flex-grow-one;
+            align-self: flex-end;
+            padding-left: $padding-nav;
+            padding-bottom: $padding-one;
             display: unset;
         }
         a{
-            padding-left: 1rem;
+            padding-left: $padding-one;
         }
     }
     .header__nav-login-item{
         align-self: center;
-        padding-left: 3rem;
+        padding-left: $padding-login;
         font-size: 0.8rem;
         display: flex;
         flex-direction: column;
@@ -40,15 +53,23 @@ $header-margin-tb: 0.4rem;
                 display: none;
             }
             a{
-                padding-left: 1rem;
+                padding-left: $padding-one;
             }
         }
         &_cart{            
             display: flex;
             align-items: center;
-            height: 3rem;
-            padding: 0.5rem;
+            justify-content: space-evenly;
+            color: unset;
+            height: 3.5rem;
+            padding: $gen-pad-margin;
             background-color: $category-background-color;
+            @media screen and (min-width:$breakpoint-mobile){
+                margin-top: $gen-pad-margin;
+            }
+            @media screen and (min-width:$breakpoint-tablet){
+                height: $padding-login;
+            }
             &-item_count{
                 align-self: center;
             }
@@ -56,23 +77,22 @@ $header-margin-tb: 0.4rem;
     }
 }
 .mainlogofit{
-    max-height: 5rem;
-    max-width: 10rem;
-    padding: 0.4rem 0.4rem 0 0.4rem;    
+    max-height: 3.5rem;
+    max-width: 6rem;
+    padding: $padding-main-logo $padding-main-logo $zero-margin $padding-main-logo;    
     object-fit: contain;
-    @media screen and (max-width:$breakpoint-tablet){
+    @media screen and (min-width:$breakpoint-mobile){
         max-height: 4rem;
-        max-width: 10rem;
-        padding-left: 0;
+        max-width: $max-height;
+        padding-left: $zero-margin;
     }
-    @media screen and (max-width:$breakpoint-mobile){
-        max-height: 3.5rem;
-        max-width: 7rem;
-        
+    @media screen and (min-width:$breakpoint-tablet){
+        max-height: $padding-nav;
+        max-width: $max-height;  
     }
 }
 .cart-image{
-    width: 2.5rem;
+    width: 2rem;
 }
 
 

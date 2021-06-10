@@ -1,0 +1,51 @@
+@import "../../../assets/styles/main.scss";
+.main_cart_container-empty{
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and(min-width:$breakpoint-tablet){
+        height: inherit;
+    }
+    &-item_count{
+        background-color:  $background-primary;
+        padding: $padding-one;
+        margin-top: $zero-margin;
+        @media screen and(min-width:$breakpoint-tablet){
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            background-color: #383737;
+            color: white;
+            padding-top: $zero-margin;
+            padding-bottom: $zero-margin;
+            width: -webkit-fill-available;
+        }
+        &-items{
+            margin: $zero-margin;
+            font-weight: unset;
+            font-size: unset;
+        }
+        &-close_button{
+            display: none;
+            @media screen and(min-width:$breakpoint-tablet){
+                display: unset;
+                background-color: unset;
+                color: unset;
+            }   
+        }
+    }
+    &-message{
+        text-align: center;
+    }
+    &-fixed_footer{
+        width: $full-width;
+        &-button{
+            display: flex;
+            justify-content: center;
+            width: -webkit-fill-available;
+            margin: $padding-one $padding-one 1.5rem $padding-one;
+        }
+    }
+}
