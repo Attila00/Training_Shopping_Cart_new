@@ -1,25 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Counter.scss';
 import propTypes from 'prop-types';
 import Button from '../../atoms/Button/Button';
 import { GlobalContext } from '../../../Context/globalContext';
 export const Counter =({counterValue=1, minVal=1, maxVal, id, totalAmount})=>{
     const {dispatch} = React.useContext(GlobalContext);
-    let disableInc = false;
-    let disableDec = false;
+    const [ disableInc, setDisableInc ] = useState(false);
+    // const [ disableDec, setDisableDec ] = useState(false);
+    useEffect(() => {
+        setDisableInc(counterValue == maxVal ? true : false);
+        return () => setDisableInc(false);
+    }, [counterValue])
     const handleCounterChangeInc = (e) =>{
             if(counterValue != undefined && counterValue < maxVal){
-                if(disableDec)disableDec = false;
+                // if(disableDec)setDisableDec(false);
                 dispatch({
                     type:'ADD_QUANTITY',
                     payload:{id}
                 });
-            }
-            else if(counterValue == maxVal)setDisable(true, disableDec);
+            }   
     };
     const handleCounterChangeDec = (e) =>{      
             if(counterValue != undefined && counterValue > minVal+1){
-                if(disableInc)disableInc = false;
                 dispatch({
                     type:'REMOVE_QUANTITY',
                     payload:{id}
@@ -30,16 +32,12 @@ export const Counter =({counterValue=1, minVal=1, maxVal, id, totalAmount})=>{
                     type:'REMOVE_ITEM',
                     payload:{id}
                 });
-                setDisable(disableInc, true)
+                // setDisableDec(true)
             };
-    };
-    const setDisable = (inc, dec) =>{
-        disableInc = (inc != undefined && inc) ? true : false;
-        disableDec = (dec != undefined && dec) ? true : false;
     };
     return <div className="main_counter">
         <Button name="decrement" reqClass={`counter-button`} 
-        disabled={disableDec} buttonclickhandler={handleCounterChangeDec}>-</Button>
+                              buttonclickhandler={handleCounterChangeDec}>-</Button>
         <p>{counterValue}</p>
         <Button name="increment" reqClass={`counter-button`} 
         disabled={disableInc} buttonclickhandler={handleCounterChangeInc}>+</Button>

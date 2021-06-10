@@ -6,3 +6,11 @@
     background-color: $primary-button-background;
     border-radius: 0.2rem;
 }
+.disabled-button{
+    padding: 0.8rem;
+    color: $button-text-color;
+    border-style: none;
+    background-color: grey;
+    border-radius: 0.2rem;
+    cursor: unset;
+}
