@@ -28,6 +28,7 @@ const Products = (props) =>{
     updateTitle(t('headernav.2'));
 
     //For checking items added to card  
+    (!selectedProducts.length) ? totalProductsList.forEach(product => product.addedtocart = false) :
     selectedProducts.forEach((selectedprod, indexselected) => totalProductsList.forEach(product =>{
         if(indexselected == 0)product.addedtocart = false;
         if(selectedprod.id == product.id)product.addedtocart = true; 

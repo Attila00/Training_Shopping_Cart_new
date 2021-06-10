@@ -2,7 +2,7 @@
     "headernav":{
         "1":"Home",
         "2":"Products",
-        "3":"SignIn",
+        "3":"Login",
         "4":"Register",
         "hello":"Hello "
     },
@@ -23,7 +23,7 @@
         "memberalready": "If already a member ? "
     },
     "register":{
-        "title":"Signup",
+        "title":"Register",
         "desc":"We do not share ur personal details with anyone",
         "inputs":{
             "1":"First Name",

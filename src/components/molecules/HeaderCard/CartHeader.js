@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Icon from '../../atoms/Icon/Icon';
 import Dialog from '../../Pages/Modal/Dialog';
 import { Cart } from '../../Pages/Cart/Cart';
@@ -6,16 +6,23 @@ import { GlobalContext } from '../../../Context/globalContext';
 import { useTranslation } from 'react-i18next';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useMediaQuery } from '../../../customHooks/useMediaQuery'
+import Button from '../../atoms/Button/Button';
 export const CartHeader = (props) =>{
     const deviceDesktop = useMediaQuery('(min-width: 769px)');
-    const {t} = useTranslation();
+    const [atCart, setAtCart] = useState(false);
+    const { t } = useTranslation();
     const history = useHistory();
     const location = useLocation();
     const { globalState, dispatch } = React.useContext(GlobalContext);
     const { selectedProducts, isOpen} = globalState;
 
     //Observer to handle cart page/modal conversion simulnateously as per gradual screen resize
-    useEffect(() => {if(location.pathname.includes('cart') || isOpen)navigateToCart()},[deviceDesktop]);
+    useEffect(() => {
+        if(location.pathname.includes('cart') || isOpen){
+            setAtCart(true);
+            navigateToCart();
+        }
+    },[deviceDesktop]);
 
     //Function to handle cart page/modal opening as per device width
     const navigateToCart = () =>{
@@ -24,14 +31,14 @@ export const CartHeader = (props) =>{
                 type:'HANDLE_MODAL',
                 payload:{isDialogOpen:false}
             })
-             history.push({pathname: "/mycart",selected: {}});
+            history.push({pathname: "/mycart",selected: {}});
         }
         else{
             dispatch({
             type:'HANDLE_MODAL',
             payload:{isDialogOpen:true}
             })
-            history.push({pathname: "/products/All",selected: {id:"All"}});
+            atCart && history.push({pathname: "/products/All",selected: {id:"All"}});
         }
     };
     //Handling explicit a11y for cart component click through keyboard
@@ -40,10 +47,10 @@ export const CartHeader = (props) =>{
     }
     return (
     <>
-    <div className={`${props.headerClass} clickable`} tabIndex={0} name="cart section" onClick={navigateToCart} onKeyPress={handleOnKeyPress}>
+    <Button reqClass={`${props.headerClass} `} buttonclickhandler={navigateToCart} >
         <Icon source="../../../assets/images/cart.svg" alt="cart image" reqclass={`cart-image`}/>
         <span className="header__nav-login-item_cart-item_count">{selectedProducts.length} {t('cart.items')}</span>
-    </div>
+    </Button>
 
     { isOpen ? <Dialog isOpen={isOpen}><Cart/></Dialog> : null}
     </>
