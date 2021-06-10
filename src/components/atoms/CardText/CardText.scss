@@ -12,6 +12,6 @@ $home-card-font-size-mobile: 0.7rem;
 .home-card-button{
     font-size: $home-card-font-size-mobile;
     @media screen and(min-width:$breakpoint-mobile){
-        font-size: unset;
+        font-size: $font-small;
     }
 }

@@ -1,6 +1,6 @@
 @import '../../../assets/styles/main.scss';
 .main_cart_container{
-    padding-top: 3rem;
+    padding-top: 2rem;
     background-color: $category-background-color;
     width: $full-width;
     @media screen and(min-width:$breakpoint-tablet){
@@ -11,12 +11,13 @@
         background-color:  $background-primary;
         padding: $padding-one;
         margin-top: $zero-margin;
-        height: 3rem;
+        height: 1rem;
         @media screen and(min-width:$breakpoint-tablet){
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             background-color: rgb(56, 55, 55);
+            height: 3rem;
             color: $background-primary;
             padding-top: $zero-margin;
             padding-bottom: $zero-margin;
@@ -32,10 +33,10 @@
         }
     }
     &-items{
-        height: calc(80vh - 11rem);
-        overflow: scroll;
+        height: calc(80vh - 8rem);
+        overflow-y: scroll;
         @media screen and(min-width:$breakpoint-mobile){
-            height: calc(80vh - 7rem);
+            height: calc(80vh - 5rem);
         }
         @media screen and(min-width:$breakpoint-tablet){
             height: calc(80vh - 10rem);

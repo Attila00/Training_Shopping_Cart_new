@@ -2,8 +2,6 @@
 $dropdown-item-padding : 1rem;
 $width-size : 1.5rem;
 .dropdown{
-    position: relative;
-    user-select: none;
     &-header{
         display: flex;
         align-items: center;
@@ -11,7 +9,10 @@ $width-size : 1.5rem;
         justify-content: space-between;
         position: relative;
         border: $bottom-border-solid #dfdfdf;
-        line-height: $bottom-border;
+        line-height: $zero-margin;
+        height: 3.2rem;
+        font-size: $font-small;
+        margin-top: 1.6rem;
         &-title{
             font-weight: 300;
         }

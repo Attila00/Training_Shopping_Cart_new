@@ -4,15 +4,14 @@ $button-text-color: #ffff;
 $input-focus__color: hsl(236, 87%, 51%);
 
 $home-card-container-shadow :0px 30px 20px -33px #a19f9f;
-$header-container-shadow :0px 30px 25px -40px #a19f9f;
-$header-container-shadow-mobile :0px 30px 25px -30px #a19f9f;
+$header-container-shadow :0px 2px 10px 0px rgb(0 0 0 / 15%);
+$header-container-shadow-mobile :0px 2px 10px 0px rgb(0 0 0 / 15%);
 $bottom-border : 0.1rem;
 $bottom-border-solid : 0.1rem solid;
 $full-width:100%;
 
 $product-card-width-tablet: 15vh;
 $width-content-container:64rem;
-// $category-background-color: rgb(238, 237, 237);
 $category-background-color: #ededed;
 $background-primary :  hsl(0, 0%, 100%);
 
@@ -20,6 +19,7 @@ $font-vsmall: 0.7rem;
 $font-small: 0.8rem;
 $font-medium: 0.9rem;
 $font-large: 1rem;
+$font-vlarge: 1.1rem;
 
 // Viewport breakpoints
 $breakpoint-mobile: 481px;
@@ -31,7 +31,7 @@ $zero-margin-auto: 0 auto;
 $zero-margin: 0;
 $flex-grow-one: 1;
 $padding-one: 1rem;
-$max-height: 10rem; 
+$max-height: 11rem; 
 $padding-main-logo: 0.4rem;
 $form-field-margin-top:1.4rem;
 $product-column-width-mobile : 8rem;
@@ -81,4 +81,7 @@ button{
 .margin-tb-zero{
     margin-top: 0;
     margin-bottom: 0;
+}
+.hide-overflow{
+    overflow: hidden;
 }

@@ -1,11 +1,13 @@
 @import "../../../assets/styles/main.scss";
 $padding-nav : 5rem;
-$padding-login : 3rem;
+$padding-nav-tab : 2rem;
+$padding-login : 4rem;
 .header{
     width: $full-width;    
     box-shadow: $header-container-shadow-mobile;
     align-content: center;
     margin-top: $zero-margin;
+    font-weight: 500;
     @media screen and(min-width:$breakpoint-mobile){
         box-shadow: $header-container-shadow;
     }
@@ -16,12 +18,19 @@ $padding-login : 3rem;
         justify-content: space-between;
         margin: $zero-margin-auto;
         @media screen and (min-width:$breakpoint-tablet){
-            margin-top: $padding-main-logo;
+            // margin-top: $padding-main-logo;
         }
     }
     .header__nav-home-item{
         display: none;
         @media screen and (min-width:$breakpoint-mobile){
+            flex: $flex-grow-one;
+            align-self: flex-end;
+            padding-left: $padding-nav-tab;
+            padding-bottom: $padding-one;
+            display: unset;
+        }
+        @media screen and (min-width:$breakpoint-tablet){
             flex: $flex-grow-one;
             align-self: flex-end;
             padding-left: $padding-nav;
@@ -50,9 +59,17 @@ $padding-login : 3rem;
         &_cart{            
             display: flex;
             align-items: center;
-            height: $padding-login;
+            justify-content: space-evenly;
+            color: unset;
+            height: 3.5rem;
             padding: $gen-pad-margin;
             background-color: $category-background-color;
+            @media screen and (min-width:$breakpoint-mobile){
+                margin-top: $gen-pad-margin;
+            }
+            @media screen and (min-width:$breakpoint-tablet){
+                height: $padding-login;
+            }
             &-item_count{
                 align-self: center;
             }
@@ -60,23 +77,22 @@ $padding-login : 3rem;
     }
 }
 .mainlogofit{
-    max-height: $padding-nav;
-    max-width: $max-height;
+    max-height: 3.5rem;
+    max-width: 6rem;
     padding: $padding-main-logo $padding-main-logo $zero-margin $padding-main-logo;    
     object-fit: contain;
-    @media screen and (max-width:$breakpoint-tablet){
+    @media screen and (min-width:$breakpoint-mobile){
         max-height: 4rem;
         max-width: $max-height;
         padding-left: $zero-margin;
     }
-    @media screen and (max-width:$breakpoint-mobile){
-        max-height: 3.5rem;
-        max-width: 7rem;
-        
+    @media screen and (min-width:$breakpoint-tablet){
+        max-height: $padding-nav;
+        max-width: $max-height;  
     }
 }
 .cart-image{
-    width: 2.5rem;
+    width: 2rem;
 }
 
 

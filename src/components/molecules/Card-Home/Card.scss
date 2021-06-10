@@ -14,7 +14,7 @@ $card-min-height : 10vh;
 }
 .imagefithome{
     max-height: $max-height;
-    max-width: 15rem;
+    max-width: 16rem;
     aspect-ratio: 3/2;
     object-fit: contain;
     @media screen and(max-width:$breakpoint-tablet){

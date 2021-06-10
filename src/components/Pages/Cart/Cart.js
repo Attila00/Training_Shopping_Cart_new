@@ -45,7 +45,6 @@ export const Cart = (props) => {
                             totalPrice={item.totalPrice}
                             quantity={item.quantity}/>}
                 )}  
-            
             <section className="main_cart_container-banner">
                 <Icon source="../../../assets/images/lowest-price.png" reqclass={`footerimagefitcart`}/> 
                 <span> {t('cart.cheapermsg')} </span>
@@ -53,12 +52,10 @@ export const Cart = (props) => {
             </div>
             <footer className="main_cart_container-fixed_footer">
                 <p>{t('cart.promomessage')}</p> 
-                {/* <Link className="main_cart_container-empty-fixed_footer" to=''> */}
                     <Button reqClass="main_cart_container-fixed_footer-button" buttonclickhandler={proceedToCheckout}>
                         <p>{t('cart.proceed')}</p>
                         <p>{`Rs. ${totalAmountAlltypes} >`}</p>
                     </Button>
-                {/* </Link> */}
             </footer>
         </main>
     )
