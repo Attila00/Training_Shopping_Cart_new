@@ -53,8 +53,7 @@ const Products = (props) =>{
         ,selected: {id}});
     };
     return (
-    <main className="products">
-        <Scrolltop showOnHeight={50}/>
+    <div className="products">
         {!isMobile ?
         (<Categories categories={categories}
             selectedCategory={selectedCategory}
@@ -72,6 +71,6 @@ const Products = (props) =>{
             return <CardProduct key={product.id} details={product}/>
         })}
         </section>
-    </main>
+    </div>
     )}
 export default Products;

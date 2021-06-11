@@ -49,7 +49,7 @@ const FormTemplate = ({inputListUsed, title, description, tabTitle}) =>{
         submit ? successSubmit() : setInputList(temp);
     };
     return (
-        <main className="main-section">
+        <div className="main-section">
             <section className="main-section_description">
                 <h2>{t(title)}</h2>
                 <p className="desc-text">{t(description)}</p>  
@@ -76,7 +76,7 @@ const FormTemplate = ({inputListUsed, title, description, tabTitle}) =>{
                 : <>{t('register.newhere')}<b><Link className="main-section_form-message" to={{pathname:'/register' , redirectToSuccess:location.redirectToSuccess}} >{t('register.title')}</Link></b></>}
             </form> 
             </section>
-        </main>
+        </div>
       );
 };
 export default FormTemplate;

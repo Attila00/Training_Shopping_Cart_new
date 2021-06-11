@@ -9,14 +9,14 @@ const Success = () =>{
     const { t } = useTranslation();
      let deliveryDate = new Date().getDate()+1 +" "+new Date().toLocaleString('default', { month: 'long' });
     return (
-        <main className="success_main">
+        <div className="success_main">
             <Icon source="../../../assets/images/checked.png"/>
             <h2>{t('success.congratulations')} {isUser.name}</h2>
             <p>{t('success.orderplaced')} <b>{deliveryDate}</b></p>
             {selectedProducts.map(item => {
                 return <section className="success_main-item"><p>{item.name.substr(0,20)} - {item.quantity} X Rs. {item.price}</p> <b>Rs. {item.totalPrice}</b></section>
             })}
-        </main>
+        </div>
     )
 };
 export default Success;
