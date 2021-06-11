@@ -1,0 +1,21 @@
+[
+    {
+    "id": "input__mail",
+    "name": "mail",
+    "placeholder": "register.inputs.3",
+    "required": true,
+    "autofocus": true,
+    "type": "email",
+    "minlength": 5
+    },
+    {
+    "id": "input__password",
+    "name": "password",
+    "placeholder": "register.inputs.4",
+    "required": true,
+    "autofocus": false,
+    "type": "password",
+    "minlength": 8,
+    "maxlength": 10
+    }
+]

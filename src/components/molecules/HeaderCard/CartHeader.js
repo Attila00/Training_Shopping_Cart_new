@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Icon from '../../atoms/Icon/Icon';
 import Dialog from '../../Pages/Modal/Dialog';
 import { Cart } from '../../Pages/Cart/Cart';
@@ -13,7 +13,7 @@ export const CartHeader = (props) =>{
     const { t } = useTranslation();
     const history = useHistory();
     const location = useLocation();
-    const { globalState, dispatch } = React.useContext(GlobalContext);
+    const { globalState, dispatch } = useContext(GlobalContext);
     const { selectedProducts, isOpen} = globalState;
 
     //Observer to handle cart page/modal conversion simulnateously as per gradual screen resize

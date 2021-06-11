@@ -3,11 +3,9 @@ $home-card-padding: 1rem;
 $card-min-height : 10vh;
 .main__card{
         &_subcontainer{
-            max-width: $width-content-container;
             box-shadow: $home-card-container-shadow;
             display: flex;
             justify-content: space-between;
-            margin: $zero-margin-auto;
             padding: $padding-one;
             min-height: $card-min-height ;
         }

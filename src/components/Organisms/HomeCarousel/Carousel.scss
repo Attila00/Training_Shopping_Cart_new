@@ -1,5 +1,19 @@
 @import "../../../assets/styles/main.scss";
-
+@mixin carousel-button {
+  display: none;
+  @media screen and (min-width: $breakpoint-mobile) {
+    display: block;
+    position: absolute;
+    top: 50%;
+    text-transform: uppercase;
+    z-index: 99;
+    background-color: $common-background-03;
+    transform: translateY(-50%);
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
 .carousel {
   margin-top: $padding-one;
   position: relative;
@@ -8,8 +22,6 @@
     align-items: center;
     height:$product-column-width-mobile;
     position: relative;
-    max-width: $width-content-container;
-    margin: $zero-margin-auto;
     box-shadow: $home-card-container-shadow;
     @media screen and (min-width: $breakpoint-mobile) {
       height: $product-column-width-nonmobile;
@@ -29,7 +41,14 @@
       }
     }
   }
-  
+  &__left-button {
+    @include carousel-button();
+    left: 0%;
+  }
+  &__right-button {
+    @include carousel-button();
+    right: 0%;
+  }
   &__nav {
     display: flex;
     justify-content: center;

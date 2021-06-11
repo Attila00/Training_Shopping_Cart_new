@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
 import ReactDom  from 'react-dom';
-import { GlobalContext } from '../../../Context/globalContext';
 import './Dialog.scss';
-const Dialog =({children}) =>{
-    const { globalState:{isOpen} } = React.useContext(GlobalContext);
+const Dialog =({children, isOpen}) =>{
     useEffect(() =>{
        if(isOpen) document.body.style.overflow = "hidden";
        return () => document.body.style.overflow = "unset";
