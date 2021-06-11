@@ -1,5 +1,5 @@
 @import "../../../assets/styles/main.scss";
-$padding-nav : 5rem;
+$padding-nav : 6rem;
 $padding-nav-tab : 2rem;
 $padding-login : 4rem;
 .header{
@@ -17,9 +17,6 @@ $padding-login : 4rem;
         max-width: $width-content-container;
         justify-content: space-between;
         margin: $zero-margin-auto;
-        @media screen and (min-width:$breakpoint-tablet){
-            // margin-top: $padding-main-logo;
-        }
     }
     .header__nav-home-item{
         display: none;
@@ -49,6 +46,7 @@ $padding-login : 4rem;
         flex-direction: column;
         justify-content: space-between;
         &_subheader{
+            align-self: flex-end;
             @media screen and (max-width:$breakpoint-mobile){
                 display: none;
             }
@@ -62,13 +60,11 @@ $padding-login : 4rem;
             justify-content: space-evenly;
             color: unset;
             height: 3.5rem;
+            width: 7rem;
             padding: $gen-pad-margin;
             background-color: $category-background-color;
             @media screen and (min-width:$breakpoint-mobile){
                 margin-top: $gen-pad-margin;
-            }
-            @media screen and (min-width:$breakpoint-tablet){
-                height: $padding-login;
             }
             &-item_count{
                 align-self: center;
@@ -87,7 +83,7 @@ $padding-login : 4rem;
         padding-left: $zero-margin;
     }
     @media screen and (min-width:$breakpoint-tablet){
-        max-height: $padding-nav;
+        max-height: 4.5rem;
         max-width: $max-height;  
     }
 }

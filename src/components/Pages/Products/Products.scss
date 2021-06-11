@@ -3,8 +3,6 @@ $automatic-size: 1fr;
 .products{
     @media screen and (min-width:$breakpoint-mobile) {
         display: flex;
-        max-width: $width-content-container;
-        margin: $zero-margin-auto ;
     }
     @media screen and (max-width:$breakpoint-mobile) {
         display: block;

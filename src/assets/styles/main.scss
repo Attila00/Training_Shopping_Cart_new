@@ -14,6 +14,7 @@ $product-card-width-tablet: 15vh;
 $width-content-container:64rem;
 $category-background-color: #ededed;
 $background-primary :  hsl(0, 0%, 100%);
+$common-background-03: rgba(0, 0, 0, 0.3);
 
 $font-vsmall: 0.7rem;
 $font-small: 0.8rem;
@@ -85,3 +86,11 @@ button{
 .hide-overflow{
     overflow: hidden;
 }
+.main-body-layout{
+    max-width: $width-content-container;
+    margin: $zero-margin-auto;
+}
+ul,li { list-style-type: none;
+    list-style-position:inside;
+    margin:0;
+    padding:0; }
