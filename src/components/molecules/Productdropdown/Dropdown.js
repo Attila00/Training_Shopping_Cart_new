@@ -21,7 +21,7 @@ const Dropdown = ({list, headerTitle, selectedCategory, itemClickHandler, displa
     };
     return(
     <div className="dropdown">
-        <Button type="primary"  reqClass={`dropdown-header`}  buttonclickhandler={() => setIsListOpen(isListOpen => !isListOpen)}>
+        <Button reqClass={`dropdown-header`}  buttonclickhandler={() => setIsListOpen(isListOpen => !isListOpen)}>
             <h2 className="dropdown-header-title">{t(headerTit)}</h2>
             {isListOpen ? <Icon source="../../../assets/images/up-arrow.png" reqclass={`dropdowniconfit`}/> : <Icon source="../../../assets/images/down-arrow.png" reqclass={`dropdowniconfit`}/>}
         </Button>   

@@ -7,7 +7,9 @@
         "hello":"Hello "
     },
     "home":{
-        "button":"Explore"
+        "button":"Explore",
+        "prev":"Prev",
+        "next":"Next"
     },
     "products":{
         "button":"Buy Now",
@@ -41,7 +43,7 @@
         "promomessage":"Promo code can be applied on payment page",
         "proceed":"Proceed to checkout",
         "noitems":"No items in your cart",
-        "emptycartmessage":"Your facourite item's are just a click away",
+        "emptycartmessage":"Your favourite item's are just a click away",
         "startshopping":"Start Shopping",
         "items":"items"
     },
