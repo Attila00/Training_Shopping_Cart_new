@@ -13,3 +13,14 @@ export const isNotUndefined = (val) =>{
 export const remSpaces = (str) =>{
     return str.split(" ").join("");
 }
+
+export const getElement = (ele, str, ind) =>{
+    let allEle = ele.querySelectorAll(str);
+    return allEle[typeof ind == 'string' ? allEle.length - parseInt(ind.split('-')[1]) : ind ];
+}
+
+export const focusElement = (ele, str, ind) =>{
+    return ele.querySelectorAll(str)[ind].focus();
+}
+
+export const getFocusables = () => `button, a[href], input, select, textarea`

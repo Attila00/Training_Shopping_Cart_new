@@ -41,15 +41,12 @@ export const CartHeader = (props) =>{
             atCart && history.push({pathname: "/products/All",selected: {id:"All"}});
         }
     };
-    //Handling explicit a11y for cart component click through keyboard
-    const handleOnKeyPress = (e) =>{
-        e.key == "Enter" && navigateToCart()
-    }
+    
     return (
     <>
     <Button reqClass={`${props.headerClass} `} buttonclickhandler={navigateToCart} >
         <Icon source="../../../assets/images/cart.svg" alt="cart image" reqclass={`cart-image`}/>
-        <span className="header__nav-login-item_cart-item_count">{selectedProducts.length} {t('cart.items')}</span>
+        <span className="header__nav-login-item_cart-item_count">{selectedProducts.length} {selectedProducts.length === 1 ? t('cart.item') : t('cart.items')}</span>
     </Button>
 
     { isOpen ? <Dialog isOpen={isOpen}><Cart/></Dialog> : null}

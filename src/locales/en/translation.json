@@ -45,7 +45,8 @@
         "noitems":"No items in your cart",
         "emptycartmessage":"Your favourite item's are just a click away",
         "startshopping":"Start Shopping",
-        "items":"items"
+        "items":"items",
+        "item":"item"
     },
     "footer":{
         "message":"Copyright 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd"

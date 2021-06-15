@@ -106,7 +106,7 @@ $description-card-desktop-height: 5rem;
         object-fit: contain;
     }
     @media screen and(min-width:$breakpoint-tablet){
-        max-height: calc(#{$product-column-width-nonmobile} + 2rem);
+        max-height: calc(#{$product-column-width-nonmobile} + 1rem);
         object-fit: contain;
     }
 }
