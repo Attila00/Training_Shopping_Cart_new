@@ -14,7 +14,7 @@ const Success = () =>{
             <h2>{t('success.congratulations')} {isUser.name}</h2>
             <p>{t('success.orderplaced')} <b>{deliveryDate}</b></p>
             {selectedProducts.map(item => {
-                return <section className="success_main-item"><p>{item.name.substr(0,20)} - {item.quantity} X Rs. {item.price}</p> <b>Rs. {item.totalPrice}</b></section>
+                return <section className="success_main-item"><p>{item.name.substr(0,16)} - {item.quantity} X Rs. {item.price}</p> <b>Rs. {item.totalPrice}</b></section>
             })}
         </div>
     )
