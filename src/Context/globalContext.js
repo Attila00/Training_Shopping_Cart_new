@@ -13,6 +13,7 @@ export const GlobalProvider = ({children}) =>{
         },
         isOpen: false,
         selectedProducts :[],
+        totalCartAmount:0,
         categories: sortByCategory(categories, 'order'),
         totalProductsList 
     }
