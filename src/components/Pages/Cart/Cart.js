@@ -11,13 +11,9 @@ import EmptyCart from './EmptyCart';
 export const Cart = (props) => {
     const { t } = useTranslation();
     const { globalState, dispatch } = React.useContext(GlobalContext);
-    const { selectedProducts, isUser, isOpen } = globalState;
+    const { selectedProducts, isUser, totalCartAmount } = globalState;
     const history = useHistory();
-    let totalAmountAlltypes = 0;
-    let isDesktop = useMediaQuery('(min-width:769px)');
-
-    //To calculate total cart value
-    selectedProducts.forEach(item => totalAmountAlltypes += parseFloat(item.totalPrice));
+    const isDesktop = useMediaQuery('(min-width:769px)');
 
     //Handles dialog closure action dispatch
     const closeDialog = () =>{
@@ -54,7 +50,7 @@ export const Cart = (props) => {
                 <p>{t('cart.promomessage')}</p> 
                     <Button reqClass="main_cart_container-fixed_footer-button" buttonclickhandler={proceedToCheckout}>
                         <p>{t('cart.proceed')}</p>
-                        <p>{`Rs. ${totalAmountAlltypes} >`}</p>
+                        <p>{`Rs. ${totalCartAmount} >`}</p>
                     </Button>
             </footer>
         </main>

@@ -23,7 +23,7 @@ const Dropdown = ({list, headerTitle, selectedCategory, itemClickHandler, displa
     <div className="dropdown">
         <Button reqClass={`dropdown-header`}  buttonclickhandler={() => setIsListOpen(isListOpen => !isListOpen)}>
             <h2 className="dropdown-header-title">{t(headerTit)}</h2>
-            {isListOpen ? <Icon source="../../../assets/images/up-arrow.png" reqclass={`dropdowniconfit`}/> : <Icon source="../../../assets/images/down-arrow.png" reqclass={`dropdowniconfit`}/>}
+            {isListOpen ? <Icon source="../../../assets/images/up-arrow.png" alt={`Up arrow to close selection dropdown`} reqclass={`dropdowniconfit`}/> : <Icon source="../../../assets/images/down-arrow.png" alt={`Down arrow to open selection dropdown`} reqclass={`dropdowniconfit`}/>}
         </Button>   
         {isListOpen && (
         <ol className="dropdown-list">

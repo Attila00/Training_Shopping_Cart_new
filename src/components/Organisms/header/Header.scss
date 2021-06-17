@@ -64,7 +64,7 @@ $padding-login : 4rem;
             padding: $gen-pad-margin;
             background-color: $category-background-color;
             @media screen and (min-width:$breakpoint-mobile){
-                margin-top: $gen-pad-margin;
+                margin-top: 0.6rem;
             }
             &-item_count{
                 align-self: center;
