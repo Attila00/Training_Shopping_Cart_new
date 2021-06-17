@@ -1,10 +1,18 @@
 @import '../../../assets/styles/main.scss';
 .success_main{
     text-align: center;
+    margin: $gen-pad-margin;
     &-item{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: $gen-pad-margin;
+        &:nth-last-child(1){
+            border-bottom: $bottom-border dashed;
+        }
+    }
+    &-totalamt{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }
