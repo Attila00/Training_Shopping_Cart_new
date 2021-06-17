@@ -100,13 +100,16 @@ $description-card-desktop-height: 5rem;
 }
 .imagefitproduct{
     max-height: 10rem;
+    min-height: 7rem;
     object-fit: contain;
     @media screen and(min-width:$breakpoint-mobile){
         max-height:9rem;
+        min-height: 6rem;
         object-fit: contain;
     }
     @media screen and(min-width:$breakpoint-tablet){
         max-height: calc(#{$product-column-width-nonmobile} + 1rem);
+        min-height: 10rem;
         object-fit: contain;
     }
 }
