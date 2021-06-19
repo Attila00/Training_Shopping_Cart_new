@@ -7,7 +7,7 @@ This provided usecase is pursued to enhance overall Application development skil
 ## Development Outline
 ##### Week 1
 - *Setup :* `Custom Webpack`, Github Repo, Folder Structure.
--  *Approach :* `Atomic Design`, Mobile First Approach, SASS(Mixins, Variables, Nesting), BEM structure in SASS.
+- *Approach :* `Atomic Design`, Mobile First Approach, SASS(Mixins, Variables, Nesting), BEM structure in SASS.
 - Worked on **Header component**.
 - **Created Routes** and basic app page layout.
 

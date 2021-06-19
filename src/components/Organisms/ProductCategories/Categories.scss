@@ -22,9 +22,11 @@
             padding-left: $gen-pad-margin;
             padding-right: $gen-pad-margin; 
             width: -webkit-fill-available;
+            opacity: 0.75;
             span{
                 font-size: $font-medium;
-                color: #777777;
+                color: #3b3b3b;
+                
                 text-align: initial;
             }
         }
