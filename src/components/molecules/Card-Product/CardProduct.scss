@@ -13,8 +13,8 @@ $description-card-desktop-height: 5rem;
         align-items: center;
         border-bottom: $bottom-border dotted $common-background-03;
         &:hover{
-            box-shadow: 0.5px 0px 10px;
-            padding: 0.5rem;
+            box-shadow: 0.5px $zero-margin $padding-one;
+            padding: $zero-margin $padding-main-logo;
         }
         &_title{
             grid-column: 1 / 3;
