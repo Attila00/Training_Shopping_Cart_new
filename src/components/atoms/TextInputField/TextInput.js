@@ -5,23 +5,23 @@ const TextInput = ({id="inputField", type="text", name, reqClass="" ,inputchange
         const {t} = useTranslation();    
         return (
         <>  
-        <input
-        id={id}
-        name={name} 
-        type={type}
-        value={value}
-        className={`input ${reqClass}`}
-        onChange={inputchangehandler} 
-        placeholder={t(placeholder)} 
-        required={required}
-        autoComplete={autocomplete}
-        autoFocus={autofocus}
-        maxLength={maxlength}
-        minLength={minlength}
-        />
-        <label htmlFor={id} 
-        className="label" data-content={t(placeholder)} />
-        <span className="text-error">{t(error)}</span>
+          <input
+            id={id}
+            name={name} 
+            type={type}
+            value={value}
+            className={`input ${reqClass}`}
+            onChange={inputchangehandler} 
+            placeholder={t(placeholder)} 
+            required={required}
+            autoComplete={autocomplete}
+            autoFocus={autofocus}
+            maxLength={maxlength}
+            minLength={minlength}
+          />
+          <label htmlFor={id} 
+            className="label" data-content={t(placeholder)} />
+          <span className="text-error">{t(error)}</span>
         </>
       );
 };

@@ -18,7 +18,7 @@ const CardProduct = ({details}) =>{
     return (
         <>
         <div className="product_wrapper">
-            <div className="product" role="product">
+            <div className="product" role="listitem">
                 <h3 className="product_title">{details.name}</h3>
                 <Icon  source={details.imageURL}
                     alt={`Image for ${details.name}`} 

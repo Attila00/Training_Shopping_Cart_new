@@ -3,14 +3,15 @@ import './Counter.scss';
 import propTypes from 'prop-types';
 import Button from '../../atoms/Button/Button';
 import { GlobalContext } from '../../../Context/globalContext';
-export const Counter =({counterValue=1, minVal=1, maxVal, id, totalAmount})=>{
+export const Counter =({counterValue=1, minVal=1, maxVal, id})=>{
     const {dispatch} = React.useContext(GlobalContext);
     const [ disableInc, setDisableInc ] = useState(false);
     // const [ disableDec, setDisableDec ] = useState(false);
     useEffect(() => {
         setDisableInc(counterValue == maxVal ? true : false);
         return () => setDisableInc(false);
-    }, [counterValue])
+    }, [counterValue]);
+
     const handleCounterChangeInc = (e) =>{
             if(counterValue != undefined && counterValue < maxVal){
                 // if(disableDec)setDisableDec(false);

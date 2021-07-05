@@ -74,7 +74,7 @@ const Products = (props) =>{
             itemClickHandler={updateProductsRoute} 
             />)
         }
-        <section id="products_list" className="products_list">
+        <section id="products_list" className="products_list" role="list">
             {isNotUndefined(displayProductList) && displayProductList.length > 0 && displayProductList.map(product =>{
             return <CardProduct key={product.id} details={product}/>
         })}

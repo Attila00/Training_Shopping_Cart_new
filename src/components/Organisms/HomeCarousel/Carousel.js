@@ -13,10 +13,8 @@ export default function Carousel() {
 
   //To automatically change banners 
   useEffect(() =>{
-    let bannerInterval = setInterval(handleSlide(current === 1 ? length : current - 1), 4000);
-    return(() => {
-        clearInterval(bannerInterval);
-    })
+    const bannerInterval = setInterval(setCurrent(current === 1 ? length : current - 1), 4000);
+    return() => clearInterval(bannerInterval);
   },[]);
 
   const handleSlide = (slideOrder) => {
